@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC 제품 카탈로그</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1 data-ko="📘 PC 제품 카탈로그" data-en="📘 PC Product Catalog">📘 PC 제품 카탈로그</h1>
+    <div class="header-controls">
+      <select id="filter" onchange="filterProducts()">
+        <option value="all">🔍 전체보기</option>
+        <option value="24">🖥️ 24인치</option>
+        <option value="27">🖥️ 27인치</option>
+        <option value="android">📱 안드로이드</option>
+        <option value="windows">🪟 윈도우</option>
+      </select>
+      <button onclick="toggleLang()">🌐 Language</button>
+      <button onclick="toggleDarkMode()">🌙 다크 모드</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="images/pc_all_in_one.jpg" alt="All in one PC" loading="lazy">
+      <div>
+        <h2 data-ko="일체형 PC" data-en="All-in-One PC">일체형 PC</h2>
+        <p data-ko="이상적인 미니멀 라이프를 실현하다" data-en="Achieve the ideal minimalist lifestyle">이상적인 미니멀 라이프를 실현하다</p>
+      </div>
+    </section>
+
+    <section class="products" id="product-list">
+      <!-- PRODUCTS WILL BE INJECTED HERE BY JS -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 부착라이프</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">×</span>
+      <img id="modal-img" src="" alt="Product Image">
+      <div id="modal-desc"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
